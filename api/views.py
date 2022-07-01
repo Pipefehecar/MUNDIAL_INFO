@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.viewsets import ViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, get_list_or_404
 from api.models import Equipo, Jugador, Directivo
 from api.serializers import EquipoSerializer, JugadorSerializer, DirectivoSerializer, DirectivoCortoSerializer, JugadorCortoSerializer
 
@@ -23,8 +23,12 @@ class EquipoViewSet(ViewSet):
     
     def list(self, request):
         equipo = Equipo.objects.all()
-        serializer = EquipoSerializer(equipo, many=True)
-        return Response(serializer.data)
+        
+        if equipo:
+            serializer = EquipoSerializer(equipo, many=True)
+            return Response(serializer.data)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={'error':'¡Primero debe crear equipos!'})
 
     def retrieve(self, request, pk=None):
         equipo = get_object_or_404(Equipo, pk=pk)
@@ -73,9 +77,12 @@ class JugadorViewSet(ViewSet):
     
     def list(self, request):
         jugador = Jugador.objects.all()
-        serializer = JugadorSerializer(jugador, many=True)
-        return Response(serializer.data)
-
+        if jugador:
+            serializer = JugadorSerializer(jugador, many=True)
+            return Response(serializer.data)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={'error':'¡Primero debe crear jugadores!'})
+        
     def retrieve(self, request, pk=None):
         jugador = get_object_or_404(Jugador, pk=pk)
         serializer = JugadorSerializer(jugador)
@@ -123,9 +130,12 @@ class DirectivoViewSet(ViewSet):
     
     def list(self, request):
         directivo = Directivo.objects.all()
-        serializer = DirectivoSerializer(directivo, many=True)
-        return Response(serializer.data)
-
+        if directivo:
+            serializer = DirectivoSerializer(directivo, many=True)
+            return Response(serializer.data)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={'error':'¡Primero debe crear directivos!'})
+        
     def retrieve(self, request, pk=None):
         directivo = get_object_or_404(Directivo, pk=pk)
         serializer = DirectivoSerializer(directivo)
