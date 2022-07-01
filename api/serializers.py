@@ -4,8 +4,12 @@ from api.models import Equipo, Jugador, Directivo
 class EquipoSerializer(ModelSerializer):
     class Meta:
         model = Equipo
-        fields = ['id','nombre','bandera_img','escudo_img']
+        fields = ['id','nombre','bandera_img','escudo_img', 'n_jugadores']
 
+class EquipoCortoSerializer(ModelSerializer):
+    class Meta:
+        model = Equipo
+        fields = ['nombre','bandera_img','escudo_img', 'n_jugadores']
 
 class JugadorSerializer(ModelSerializer):
     class Meta:

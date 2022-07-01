@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404, get_list_or_404
 from api.models import Equipo, Jugador, Directivo
-from api.serializers import EquipoSerializer, JugadorSerializer, DirectivoSerializer, DirectivoCortoSerializer, JugadorCortoSerializer
+from api.serializers import EquipoSerializer, EquipoCortoSerializer, JugadorSerializer, DirectivoSerializer, DirectivoCortoSerializer, JugadorCortoSerializer
 
 # Create your views here.
 class EquipoViewSet(ViewSet):
@@ -180,13 +180,14 @@ class MundialInfoApiView(APIView):
             
         else:
             response = {
-                'EQUIPOS_REGISTRADOS':num_equipos,
-                'TOTAL_DE_JUGADORES':num_jugadores,
+                'EQUIPOS_REGISTRADOS':num_equipos[0],
+                'TOTAL_DE_JUGADORES':num_jugadores[0],
                 'JUGADOR_MAS_JOVEN':JugadorCortoSerializer(Jugador.objects.mas_joven()).data,
                 'JUGADOR_MAS_VIEJO':JugadorCortoSerializer(Jugador.objects.mas_viejo()).data,
                 'TOTAL_DE_JUGADORES_SUPLENTES':Jugador.objects.suplentes().count(),
                 'PROMEDIO_DE_SUPLENTES_POR_EQUIPO':Equipo.objects.prom_jugadores_suplentes(),
-                'EQUIPO_MAS_CON_JUGADORES':Equipo.objects.mas_jugadores().nombre,
+                # 'EQUIPO_MAS_CON_JUGADORES':Equipo.objects.mas_jugadores().nombre,
+                'EQUIPO_MAS_CON_JUGADORES':EquipoCortoSerializer(Equipo.objects.mas_jugadores()).data,
                 'EDAD_PROMEDIO_DE_LOS_JUGADORES':Jugador.objects.edad_prom(),
                 'PROMEDIO_DE_JUGADORES_POR_EQUIPO':Equipo.objects.prom_jugadores(),
                 'TECNICO_MAS_VIEJO':DirectivoCortoSerializer(Directivo.objects.tecnico_mas_viejo()).data,

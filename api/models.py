@@ -25,12 +25,17 @@ class Equipo(models.Model):
     escudo_img = models.CharField(max_length=350,  blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     objects = EquipoManager()
+    
+   
     class Meta:
         db_table = 'equipo'
         
     def __str__(self):
         return self.nombre.capitalize() 
 
+    @property
+    def n_jugadores(self):
+        return Jugador.objects.filter(equipo_id=self.id).count()
     
 class JugadorManager(models.Manager):
     def suplentes(self):
