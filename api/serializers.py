@@ -15,10 +15,15 @@ class JugadorSerializer(ModelSerializer):
 class JugadorCortoSerializer(ModelSerializer):
     class Meta:
         model = Jugador
-        fields = ['foto','nombre','apellido','fecha_nacimiento','numero_camiseta','es_titular', 'posicion', 'equipo']
+        fields = ['nombre_completo','edad','numero_camiseta','es_titular', 'posicion', 'equipo']
 
         
 class DirectivoSerializer(ModelSerializer):
     class Meta:
         model = Directivo
         fields = '__all__'
+        
+class DirectivoCortoSerializer(ModelSerializer):
+    class Meta:
+        model = Directivo
+        fields = ['nombre_completo','edad','nacionalidad','rol', 'equipo_id']

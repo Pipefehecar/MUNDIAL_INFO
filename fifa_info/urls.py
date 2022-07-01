@@ -3,6 +3,7 @@
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.views import MundialInfoApiView
 from api.router import router_equipo, router_jugador, router_directivo
 
 #documentacion
@@ -27,6 +28,7 @@ urlpatterns = [
     path('api/', include(router_equipo.urls)),
     path('api/', include(router_jugador.urls)),
     path('api/', include(router_directivo.urls)),
+    path('api/mundial/informacion/', MundialInfoApiView.as_view()),
     
     #enpoints de documentacion
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
