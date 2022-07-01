@@ -8,19 +8,27 @@ Esta api registra información para los equipos, jugadores y directivos particip
 * [Postgresql](https://www.postgresql.org/): Un poderoso sistema de base de datos relacional de objetos de código abierto con más de 30 años de desarrollo
 * [Swagger](https://www.postgresql.org/): Sistema gestor de documentacion
 ## Instalación 💡
-* Asegúrese de tener Python instalado globalmente en su computadora. De no ser asi, puedes obtener python [aqui](https://www.python.org").
-* Ahora es momento de verificar la instalacion de virtualenv, en todo caso:
-    ```bash
-        $ pip install virtualenv
-    ```
-* Una vez verificado lo anterior puedes clonar este repositorio
+* Empecemos clonando el este repositorio:
     ```bash
         $ git clone https://github.com/Pipefehecar/MUNDIAL_INFO.git
     ```
+* Muevete al directorio del proyecto:
+    ```bash
+        $ cd MUNDIAL_INFO
+    ```
+
+* Asegúrese de tener Python instalado globalmente en su computadora. De no ser asi, puedes obtener python [aqui](https://www.python.org").
+
+* Crea tu entorno virtual y activalo:
+    ```bash
+        $ py -m  venv venv
+        $ venv/scripts/activate
+    ``` 
+
 * Instala postgresql y crea la base de datos:
     ```bash
         $ CREATE DATABASE mundialqatar2022;
-
+    ``` 
 * Configura la db en los settings de tu proyecto, deberia quedarte algo como esto:
     ```bash
         DATABASES = {
@@ -36,15 +44,8 @@ Esta api registra información para los equipos, jugadores y directivos particip
 
 
 * #### Dependencies
-    1. Muevete al directorio del proyecto:
-        ```bash
-            $ cd MUNDIAL_INFO
-        ```
-    2. Crea tu entorno virtual y activalo:
-        ```bash
-            $ virtualenv  venv -p python3
-            $ venv/Scripts/activate
-        ```
+
+  
     3. Instala las dependencias de la aplicacion:
         ```bash
             $ pip install -r requirements.txt
