@@ -10,6 +10,11 @@ class EquipoSerializer(ModelSerializer):
 class JugadorSerializer(ModelSerializer):
     class Meta:
         model = Jugador
+        fields = '__all__'
+
+class JugadorCortoSerializer(ModelSerializer):
+    class Meta:
+        model = Jugador
         fields = ['foto','nombre','apellido','fecha_nacimiento','numero_camiseta','es_titular', 'posicion', 'equipo']
 
         
