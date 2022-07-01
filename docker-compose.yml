@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  localhost:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: mundialqatar2022
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  api:
+    build: .
+    command: python -m gunicorn fifa.wsgi --bind 0.0.0.0:8000 
+    environment:
+      TZ: America/Bogota
+      CHOKIDAR_USEPOLLING: "true"
+      SQL_ENGINE: django.db.backends.postgresql
+      SQL_DATABASE: mundialqatar2022
+      SQL_USER: postgres
+      SQL_PASSWORD: 1234
+      SQL_HOST: localhost
+      SQL_PORT: 5432
+    volumes: 
+      - . :/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - localhost
+
+  
+volumes:
+  pg_data:
