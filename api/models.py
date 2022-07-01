@@ -60,7 +60,7 @@ class Jugador(models.Model):
     numero_camiseta = models.PositiveIntegerField()
     es_titular = models.BooleanField(default=True)
     posicion = models.CharField(max_length=3, choices=POSICIONES_DE_JUEGO)
-    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='jugadores')
+    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='jugadores')
     created_at = models.DateTimeField(auto_now_add=True)
     objects = JugadorManager()
    
@@ -71,6 +71,10 @@ class Jugador(models.Model):
         
     def __str__(self):
         return self.nombre.capitalize()
+    
+    @property
+    def equipo(self):
+        return self.equipo_id.nombre
     
     @property
     def edad(self) -> int:
@@ -95,7 +99,7 @@ class Directivo(models.Model):
     fecha_nacimiento = models.DateField()
     nacionalidad = models.CharField(max_length=30)
     rol = models.CharField(max_length=3, choices=ROLES_ADMINISTRATIVOS)
-    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='directivos')
     created_at = models.DateTimeField(auto_now_add=True)
     objects = DirectivoManager()
     
@@ -104,6 +108,10 @@ class Directivo(models.Model):
         
     def __str__(self):
         return self.nombre.capitalize() 
+    
+    @property
+    def equipo(self):
+        return self.equipo_id.nombre
     
     @property
     def edad(self) -> int:

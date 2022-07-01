@@ -28,7 +28,7 @@ urlpatterns = [
     path('api/', include(router_equipo.urls)),
     path('api/', include(router_jugador.urls)),
     path('api/', include(router_directivo.urls)),
-    path('api/mundial/informacion/', MundialInfoApiView.as_view()),
+    path('api/mundial-info/', MundialInfoApiView.as_view()),
     
     #enpoints de documentacion
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

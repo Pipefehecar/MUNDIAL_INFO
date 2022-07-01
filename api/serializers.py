@@ -26,4 +26,4 @@ class DirectivoSerializer(ModelSerializer):
 class DirectivoCortoSerializer(ModelSerializer):
     class Meta:
         model = Directivo
-        fields = ['nombre_completo','edad','nacionalidad','rol', 'equipo_id']
+        fields = ['nombre_completo','edad','nacionalidad','rol', 'equipo']
