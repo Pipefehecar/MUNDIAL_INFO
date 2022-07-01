@@ -20,7 +20,7 @@ class Equipo(models.Model):
     """
     Modelo para equipos.
     """
-    nombre = models.CharField(max_length=14, choices=EQUIPOS_ADMITIDOS, unique=True)#los equipos clasificados al mundial son un listado selecto, usamos choices
+    nombre = models.CharField(max_length=30, unique=True)#los equipos clasificados al mundial son un listado selecto, usamos choices
     bandera_img = models.CharField(max_length=350, blank=True, null=True)
     escudo_img = models.CharField(max_length=350,  blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

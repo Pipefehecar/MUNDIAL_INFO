@@ -2,6 +2,31 @@
 
 Esta api registra información para los equipos, jugadores y directivos participantes del mundial 2022
 
+## El contexto👀
+
+La FIFA me ha contactado para que le ayudes a consolidar la información de todos los equipos que
+van a ir al próximo mundial, así que te dicen que debes crear una API con un CRUD para cada una
+de la siguiente información:
+
+* Equipo:
+  * Nombre del Equipo
+  * Imagen de Bandera
+  * Escudo del Equipo
+* Jugadores del equipo, con los siguientes datos de cada jugador:
+  * Foto del jugador
+  * Nombre
+  * Apellido
+  * Fecha de nacimiento
+  * Posición en la que juega
+  * Número de camiseta
+  * ¿Es titular?
+* Cuerpo técnico
+  * Nombre
+  * Apellido
+  * Fecha de nacimiento
+  * Nacionalidad
+  * Rol (técnico | asistente | médico | preparador)
+
 ## Tecnologias usadas 🔥
 
 * [Django](https://www.djangoproject.com/): Un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador (MVC).
@@ -72,6 +97,15 @@ Despiega la api así:
 
 En esta ruta encontraras la documentacion, registra equipos, jugadores, directivos y pruebala!
 
-```
+```bash
     http://127.0.0.1:8000/docs/
 ```
+
+#### Si quieres probar la api más rapidamente puedes importar algunos registros⚡️
+
+* El repositorio incluye un archivo con algunos insert para jugadores, equipos y directivos
+* correlos en sql Sell (el shell de postgres) asi:
+
+  ```bash
+        mundialqatar2022=# \i 'C:/ruta_al_proyecto/MUNDIAL_INFO/registros.sql'
+  ```
