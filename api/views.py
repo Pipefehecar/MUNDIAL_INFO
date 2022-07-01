@@ -174,7 +174,7 @@ class MundialInfoApiView(APIView):
         num_directivos = Directivo.objects.count(),
         
         
-        if not num_jugadores or not num_equipos  or not num_directivos:
+        if  num_jugadores or  num_equipos  or  num_directivos:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={'pocos datos':f'equipos: {num_equipos[0]}, jugadores: {num_jugadores[0]}, directivos: {num_directivos[0]}'})
             # return Response(status=status.HTTP_400_BAD_REQUEST, data={'pocos datos': num_jugadores[0] })
             

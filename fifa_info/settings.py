@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'fifa_info.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mundialqatar2022',
+        'NAME': 'mundialrebus',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',

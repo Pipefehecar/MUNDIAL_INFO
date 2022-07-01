@@ -1,0 +1,121 @@
+[
+{
+    "model": "api.equipo",
+    "pk": 2,
+    "fields": {
+        "nombre": "SUIZA",
+        "bandera_img": "band",
+        "escudo_img": null,
+        "created_at": "2022-07-01T16:33:00.023Z"
+    }
+},
+{
+    "model": "api.equipo",
+    "pk": 3,
+    "fields": {
+        "nombre": "ARGENTINA",
+        "bandera_img": null,
+        "escudo_img": null,
+        "created_at": "2022-07-01T16:39:44.685Z"
+    }
+},
+{
+    "model": "api.equipo",
+    "pk": 4,
+    "fields": {
+        "nombre": "ALEMANIA",
+        "bandera_img": null,
+        "escudo_img": null,
+        "created_at": "2022-07-01T18:34:07.077Z"
+    }
+},
+{
+    "model": "api.equipo",
+    "pk": 5,
+    "fields": {
+        "nombre": "COLOMBIA",
+        "bandera_img": null,
+        "escudo_img": null,
+        "created_at": "2022-07-01T18:34:19.969Z"
+    }
+},
+{
+    "model": "api.equipo",
+    "pk": 6,
+    "fields": {
+        "nombre": "BRAZIL",
+        "bandera_img": null,
+        "escudo_img": null,
+        "created_at": "2022-07-01T18:34:52.159Z"
+    }
+},
+{
+    "model": "api.jugador",
+    "pk": 1,
+    "fields": {
+        "foto": null,
+        "nombre": "Julio",
+        "apellido": "barreneche",
+        "fecha_nacimiento": "1998-03-21",
+        "numero_camiseta": 25,
+        "es_titular": false,
+        "posicion": "MI",
+        "equipo_id": 5,
+        "created_at": "2022-07-01T19:49:45.013Z"
+    }
+},
+{
+    "model": "api.jugador",
+    "pk": 2,
+    "fields": {
+        "foto": null,
+        "nombre": "Nicolas",
+        "apellido": "Panamera",
+        "fecha_nacimiento": "1997-05-22",
+        "numero_camiseta": 25,
+        "es_titular": false,
+        "posicion": "MI",
+        "equipo_id": 4,
+        "created_at": "2022-07-01T19:50:57.808Z"
+    }
+},
+{
+    "model": "api.directivo",
+    "pk": 1,
+    "fields": {
+        "nombre": "Julio",
+        "apellido": "barreneche",
+        "fecha_nacimiento": "1955-02-25",
+        "nacionalidad": "Colombiano",
+        "rol": "TEC",
+        "equipo_id": 3,
+        "created_at": "2022-07-01T19:46:29.878Z"
+    }
+},
+{
+    "model": "api.directivo",
+    "pk": 2,
+    "fields": {
+        "nombre": "Juan Carlos",
+        "apellido": "Martinez",
+        "fecha_nacimiento": "1965-07-29",
+        "nacionalidad": "Colombiano",
+        "rol": "MED",
+        "equipo_id": 4,
+        "created_at": "2022-07-01T19:47:27.202Z"
+    }
+},
+{
+    "model": "api.directivo",
+    "pk": 3,
+    "fields": {
+        "nombre": "Carlos",
+        "apellido": "Sosa",
+        "fecha_nacimiento": "1976-08-19",
+        "nacionalidad": "Paname±o",
+        "rol": "PRE",
+        "equipo_id": 5,
+        "created_at": "2022-07-01T19:48:09.721Z"
+    }
+}
+]
