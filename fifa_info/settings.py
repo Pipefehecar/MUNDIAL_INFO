@@ -78,21 +78,21 @@ WSGI_APPLICATION = 'fifa_info.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
-        "NAME": os.environ.get("SQL_DATABASE", "mundialqatar2022"),
-        "USER": os.environ.get("SQL_USER", "postgres"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
-	}
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mundialqatar2022',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'mundialqatar2022',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '1234',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
+    #     "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
+    #     "NAME": os.environ.get("SQL_DATABASE", "mundialqatar2022"),
+    #     "USER": os.environ.get("SQL_USER", "postgres"),
+    #     "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+    #     "HOST": os.environ.get("SQL_HOST", "localhost"),
+    #     "PORT": os.environ.get("SQL_PORT", "5432"),
+	# }
 }
 
 
