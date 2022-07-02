@@ -87,6 +87,13 @@ de la siguiente información:
        $ python manage.py migrate
    ```
 
+
+    ##### Si quieres probar la api más rapidamente puedes importar algunos registros⚡️
+
+    * El repositorio incluye un archivo con algunos registros en formato Json (db.json),  puedes importarlos asi:
+    ```bash
+        $ python manage.py loaddata db.json
+    ```
 ### Hora de correr esto 🚀
 
 Despiega la api así:
@@ -95,17 +102,9 @@ Despiega la api así:
     $ python manage.py runserver
 ```
 
-En esta ruta encontraras la documentacion, registra equipos, jugadores, directivos y pruebala!
+
+Al final encontraras en esta ruta la documentacion, registra equipos, jugadores, directivos y pruebala!
 
 ```bash
     http://127.0.0.1:8000/docs/
 ```
-
-#### Si quieres probar la api más rapidamente puedes importar algunos registros⚡️
-
-* El repositorio incluye un archivo con algunos insert para jugadores, equipos y directivos
-* correlos en sql Sell (el shell de postgres) asi:
-
-  ```bash
-        mundialqatar2022=# \i 'C:/ruta_al_proyecto/MUNDIAL_INFO/registros.sql'
-  ```
